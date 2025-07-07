@@ -1,4 +1,4 @@
-# Download MIDAS OPEN UK wind data from CEDA
+## Download MIDAS OPEN UK wind data from CEDA
 
 * Data source: https://data.ceda.ac.uk/badc/ukmo-midas-open/data/uk-mean-wind-obs
 * Total 8.3GB (41 minutes)
@@ -16,7 +16,7 @@ $> export TOKEN="...TOKEN TEXT..."
 $> wget -e robots=off --mirror --no-parent -r https://dap.ceda.ac.uk/badc/ukmo-midas-open/data/uk-mean-wind-obs/dataset-version-202407/ --header "Authorization: Bearer $TOKEN"
 ```
 
-# Wrangle data
+## Wrangle data
 
 * Assuming the download data directory is `~/data/midas-wind/`
 
@@ -55,7 +55,8 @@ midas-open_uk-mean-wind-obs_dv-202407_hampshire_00869_south-farnborough_qcv-1_20
 ```
 
 * the R script `wrangle.R` reads each of the over 11k csv files, combines them and stores them in one compressed csv file per year in the `./data` directory of this repo
-* **File format:**
+
+## File format
 
 ```
 $> zcat ./data/midas-wind-2023.csv.gz | head
@@ -72,7 +73,7 @@ id,time,dir,speed,gust_dir,gust_speed,dir_q,speed_q,gust_dir_q,gust_speed_q
 150,2023-01-01 08:00:00,270,2,260,4,6,6,6,6
 ```
 
-* **Description**
+**Description**
 
 * `id`: station ID, see `data/METADATA.csv`
 * `time`: Timestamp 
@@ -81,7 +82,7 @@ id,time,dir,speed,gust_dir,gust_speed,dir_q,speed_q,gust_dir_q,gust_speed_q
 * `*_q`: Quality flags, 0 (poor) - 9 (good); NOTE: not well documented on CEDA
 
 
-# Citation and license
+## Citation and license
 
 * CEDA catalogue entry: https://catalogue.ceda.ac.uk/uuid/91cb9985a6c2453d99084bde4ff5f314
 * Use of MIDAS OPEN data is covered by the Open Government Licence: http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
