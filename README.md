@@ -1,6 +1,8 @@
-# Download the uk-midas-wind-obs data from CEDA (8.3GB in 41 minutes)
+# Download uk-midas-wind-obs data from CEDA
 
-* obtain an access token as described at https://help.ceda.ac.uk/article/5191-downloading-multiple-files-with-wget
+* Total 8.3GB (41 minutes)
+* might need to obtain an access token as described at https://help.ceda.ac.uk/article/5191-downloading-multiple-files-with-wget
+* Download data with `wget` as follows:
 
 ```
 $> export TOKEN="TOKEN TEXT"
@@ -50,7 +52,7 @@ midas-open_uk-mean-wind-obs_dv-202407_hampshire_00869_south-farnborough_qcv-1_20
 * format, for example
 
 ```
-$> zcat data/midas-wind-1949.csv.gz | head
+$> zcat ./data/midas-wind-2023.csv.gz | head
 
 id,time,dir,speed,gust_dir,gust_speed,dir_q,speed_q,gust_dir_q,gust_speed_q
 150,2023-01-01 00:00:00,300,3,310,5,6,6,6,6
