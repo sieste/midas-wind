@@ -11,9 +11,10 @@ $> wget -e robots=off --mirror --no-parent -r https://dap.ceda.ac.uk/badc/ukmo-m
 * You might need to obtain an access token as described at https://help.ceda.ac.uk/article/5191-downloading-multiple-files-with-wget
 * To download data with an authentication token, copy the token text from website and use `wget` to download data as follows:
 
+```
 $> export TOKEN="...TOKEN TEXT..."
 $> wget -e robots=off --mirror --no-parent -r https://dap.ceda.ac.uk/badc/ukmo-midas-open/data/uk-mean-wind-obs/dataset-version-202407/ --header "Authorization: Bearer $TOKEN"
-
+```
 
 # Wrangle data
 
